@@ -7491,7 +7491,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
@@ -7516,7 +7516,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
@@ -7594,7 +7594,7 @@ $\displaystyle \left[\begin{matrix}-2 &amp; 1 &amp; 0\\0 &amp; 3 &amp; 0\\5 &amp
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Soma A+B'</span><span class="p">)</span>
@@ -7602,7 +7602,7 @@ $\displaystyle \left[\begin{matrix}-2 &amp; 1 &amp; 0\\0 &amp; 3 &amp; 0\\5 &amp
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Produto AC'</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">C</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Transposta de A'</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7653,7 +7653,101 @@ $\displaystyle \left[\begin{matrix}1 &amp; 3\\2 &amp; 4\\-3 &amp; 0\end{matrix}\
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e901885e-3ce0-4bb0-9bc3-ef9882f2e5ac">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=36760593-57ce-4ba3-a3d1-0bd48bd7e2bf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h1 id="Produto-Escalar-usando-sympy">Produto Escalar usando sympy<a class="anchor-link" href="#Produto-Escalar-usando-sympy">¶</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=96280b67-194c-4f0c-84c7-115cf32f52bd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">mpmath</span> <span class="k">as</span> <span class="nn">mp</span><span class="c1">#para calcular o ângulo em graus</span>
+
+<span class="c1">#definindo vetores como matrizes coluna</span>
+<span class="n">u</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mf">1.12</span><span class="p">,</span><span class="o">-</span><span class="mf">3.25</span><span class="p">,</span><span class="mf">2.07</span><span class="p">,</span><span class="o">-</span><span class="mf">1.83</span> <span class="p">])</span>
+<span class="n">v</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="o">-</span><span class="mf">2.29</span><span class="p">,</span><span class="mf">1.72</span><span class="p">,</span><span class="mf">4.33</span><span class="p">,</span><span class="o">-</span><span class="mf">1.54</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Vetores u e v'</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="c1">#produto escalar de u por v</span>
+<span class="n">uv</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'produto u.v'</span><span class="p">,</span><span class="n">uv</span><span class="p">)</span>
+
+<span class="c1">#noram de u</span>
+<span class="n">nu</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Norma de u '</span><span class="p">,</span><span class="n">nu</span><span class="p">)</span>
+
+<span class="c1">#norma de v</span>
+<span class="n">nv</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Norma de v '</span><span class="p">,</span><span class="n">nv</span><span class="p">)</span>
+
+<span class="c1">#cálculo do cosseno do ângulo entre eles</span>
+<span class="n">cos</span><span class="o">=</span><span class="n">uv</span><span class="o">/</span><span class="p">(</span><span class="n">nu</span><span class="o">*</span><span class="n">nv</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Cosseno do ângulo'</span><span class="p">,</span><span class="n">cos</span><span class="p">)</span>
+
+<span class="c1">#determinando o ângulo</span>
+<span class="n">theta</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">cos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ângulo theta='</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="s1">' rad'</span><span class="p">)</span>
+
+<span class="c1">#convertendo o ângulo para graus e fazendo aproximação com 2 casas decimais.</span>
+<span class="n">thetag</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ângulo theta'</span><span class="p">,</span> <span class="n">thetag</span><span class="p">,</span> <span class="s1">'graus'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Vetores u e v
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedLatex jp-OutputArea-output" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left[\begin{matrix}1.12\\-3.25\\2.07\\-1.83\end{matrix}\right]$
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedLatex jp-OutputArea-output" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left[\begin{matrix}-2.29\\1.72\\4.33\\-1.54\end{matrix}\right]$
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>produto u.v 3.62650000000000
+Norma de u  4.41029477472878
+Norma de v  5.41507156000731
+Cosseno do ângulo 0.151850373283378
+ângulo theta= 1.41835623915784  rad
+ângulo theta 81.27 graus
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=35f73985-c366-4634-b679-936e36f8fcd7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
